@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-header',
   template: `
-    <nav class="navbar is-dark">
+    <nav class="navbar is-black">
 
 
       <!-- menu -->
-      <div class="navbar-menu">
+      <div class="navbar-brand">
         <div class="navbar-start">
           <a class="navbar-item" routerLink="">Home</a>
           <a class="navbar-item" routerLink="contact">Contact</a>

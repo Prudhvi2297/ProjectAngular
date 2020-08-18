@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
     <div class="hero-body">
     <div class="container">
 
-      <h1 class="title">Home</h1>
+      <h1 class="title">HRM Dashboard</h1>
 
     </div>
     </div>
@@ -15,7 +15,7 @@ import { Component, OnInit } from '@angular/core';
   `,
   styles: [`
     .hero {
-      background-image: url('/assets/img/canyon.jpg') !important;
+      background-image: url('/assets/img/home.jpg') !important;
       background-size: cover;
       background-position: center center;
     }

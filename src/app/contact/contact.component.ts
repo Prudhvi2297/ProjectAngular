@@ -3,10 +3,10 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-contact',
   template: `
-    <section class="hero is-primary is-bold">
+    <section class="hero is-dark is-bold">
     <div class="hero-body">
-    <div class="container">  
-      <h1 class="title">Contact Us!</h1>  
+   <div class="container">  
+      <h1 class="title">Contact Us...</h1>  
     </div>
     </div>
     </section>
@@ -30,7 +30,7 @@ import { Component, OnInit } from '@angular/core';
             #nameInput="ngModel">
 
           <div class="help is-error" *ngIf="nameInput.invalid && nameInput.dirty">
-            Name is required and needs to be at least 3 characters long.
+            Required at least 3 characters.
           </div>
         </div>
 
@@ -44,10 +44,12 @@ import { Component, OnInit } from '@angular/core';
             [(ngModel)]="email"
             required
             email
-            #emailInput="ngModel">
+            #emailInput="ngModel"
+            placeholder="Ex. example@example.com"
+            >
 
           <div class="help is-error" *ngIf="emailInput.invalid && emailInput.dirty">
-            Needs to be a valid email.
+            Enter a valid email.
           </div>
         </div>
 
@@ -56,24 +58,26 @@ import { Component, OnInit } from '@angular/core';
           <textarea 
             class="textarea" 
             name="message" 
-            placeholder="What's on your mind?" 
+            placeholder="Type your message Here" 
             [(ngModel)]="message"
             required
-            #messageInput="ngModel"></textarea>
+            maxlength="256" 
+            #messageInput="ngModel"
+            ></textarea>
 
             <div class="help is-error" *ngIf="emailInput.invalid && emailInput.dirty">
               Your message is required!
             </div>
         </div>
 
-        <button type="submit" class="button is-danger is-large">Submit</button>
+        <button type="submit" class="button is-success is-large">Submit</button>
 
       </form>
 
     </div>
     </section>
   `,
-  styles: []
+  styles: [ ]
 })
 export class ContactComponent implements OnInit {
   name: string;
@@ -83,11 +87,6 @@ export class ContactComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-
-  /**
-   * Process the form we have. Send to whatever backend
-   * Only alerting for now
-   */
   processForm() {
     const allInfo = `My name is ${this.name}. My email is ${this.email}. My message is ${this.message}`;
     alert(allInfo); 
