@@ -13,10 +13,6 @@ const routes: Routes = [
     path: 'contact',
     component: ContactComponent
   },
-  {
-    path: 'users',
-    loadChildren: 'app/users/users.module#UsersModule'
-  }
 ];
 
 @NgModule({
